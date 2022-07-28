@@ -1,0 +1,25 @@
+{
+  "name": "Linkedin-auto-connector",
+  "version": "1.0.0",
+  "description": "automation script to connect multiple people with a single click",
+  "author": "Shaik Inamul Hassan",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["https://*.linkedin.com/*"],
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Linkedin auto connector"
+  },
+  "background": {
+    "service_worker": "backgroundServiceWorker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.linkedin.com/*"],
+      "js": ["contentScipts.js"]
+    }
+  ],
+  "default_title": "Linkedin auto connector",
+  "default_popup": "index.html",
+
+  "manifest_version": 3
+}
