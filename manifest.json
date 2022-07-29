@@ -3,11 +3,19 @@
   "version": "1.0.0",
   "description": "automation script to connect multiple people with a single click",
   "author": "Shaik Inamul Hassan",
-  "permissions": ["storage", "tabs", "activeTab"],
+  "permissions": ["storage", "activeTab", "scripting"],
   "host_permissions": ["https://*.linkedin.com/*"],
   "action": {
-    "default_popup": "index.html",
-    "default_title": "Linkedin auto connector"
+    "default_popup": "popup.html",
+    "default_title": "Linkedin auto connector",
+    "default_icon": {
+      "16": "assets/linkedin-16.png",
+      "24": "assets/linkedin-24.png",
+      "32": "assets/linkedin-32.png",
+      "48": "assets/linkedin-48.png",
+      "64": "assets/linkedin-64.png",
+      "128": "assets/linkedin-128.png"
+    }
   },
   "background": {
     "service_worker": "backgroundServiceWorker.js"
@@ -18,5 +26,13 @@
       "js": ["contentScript.js"]
     }
   ],
-  "manifest_version": 3
+  "manifest_version": 3,
+  "icons": {
+    "16": "assets/linkedin-16.png",
+    "24": "assets/linkedin-24.png",
+    "32": "assets/linkedin-32.png",
+    "48": "assets/linkedin-48.png",
+    "64": "assets/linkedin-64.png",
+    "128": "assets/linkedin-128.png"
+  }
 }

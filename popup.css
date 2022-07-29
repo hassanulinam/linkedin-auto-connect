@@ -1,0 +1,16 @@
+.bg-container {
+  width: 300px;
+}
+
+.connect-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: lightgreen;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.connect-btn:active {
+  transform: scale(0.9);
+}
