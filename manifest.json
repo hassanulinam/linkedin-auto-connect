@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "automation script to connect multiple people with a single click",
   "author": "Shaik Inamul Hassan",
-  "permissions": ["storage", "activeTab", "scripting"],
+  "permissions": ["storage", "activeTab", "scripting", "tabs"],
   "host_permissions": ["https://*.linkedin.com/*"],
   "action": {
     "default_popup": "popup.html",

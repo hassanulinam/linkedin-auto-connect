@@ -13,24 +13,25 @@ btn.addEventListener("click", async () => {
   console.log(tab);
 });
 
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 async function startConnecting() {
   console.log("Scripting from my extension.....");
   const buttons = document.getElementsByClassName("artdeco-button");
   console.log(buttons.length, "elements found");
-  for (let btn of buttons) {
-    if (btn.innerText === "Connect") {
-      console.log("clicking...");
-      btn.click();
-      console.log(innerButtons);
-      for (let ibtn of innerButtons) {
-        if (ibtn.innerText === "Send") {
-          console.log("Found the the button in the modal....");
-        }
+  console.log(this);
+  for (let i = 0; i < buttons.length; i++) {
+    setTimeout(() => {
+      if (buttons[i].innerText === "Connect") {
+        buttons[i].click();
+        setTimeout(() => {
+          const modalButtons = document.querySelectorAll(
+            ".artdeco-modal__actionbar .artdeco-button"
+          );
+          for (let b of modalButtons) {
+            if (b.innerText === "Send") b.click();
+          }
+          console.log("In modal now...");
+        }, 100);
       }
-    }
+    }, i * 1000 + 100);
   }
 }
